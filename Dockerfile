@@ -82,7 +82,7 @@ VOLUME ["/data/db"]
 RUN apk add --no-cache mongodb
 
 # Final setup steps (placeholders, adjust as needed)
-RUN chmod +x run.sh
+# RUN chmod +x run.sh
 
 # Set the entrypoint
-CMD ["./run.sh"]
+CMD ["./gradlew bootRun"]
