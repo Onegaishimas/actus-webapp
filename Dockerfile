@@ -11,7 +11,7 @@ RUN apk add --no-cache
 ENV JAVA_VERSION=jdk-11.0.11+9
 
 # Copy necessary files
-COPY multi:da97b7f42d52b404e495fa140e92a22c92d31d4502eef244047de8e9f26d61c1 /usr/local/bin/
+#COPY multi:da97b7f42d52b404e495fa140e92a22c92d31d4502eef244047de8e9f26d61c1 /usr/local/bin/
 
 # Install Java
 RUN set -eux;
@@ -24,7 +24,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 CMD ["jshell"]
 
 # Add label
-LABEL Francis="Parr <fnparr@gmail.com>"
+#LABEL Francis="Parr <fnparr@gmail.com>"
 
 # Add Alpine package repository
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories
@@ -65,7 +65,7 @@ VOLUME ["/cache"]
 WORKDIR /home/app
 
 # Copy application files
-COPY app .
+#COPY app .
 
 # Build steps (placeholders, adjust as needed)
 RUN mvn clean package
