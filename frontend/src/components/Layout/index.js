@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Col, Grid, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap'; // Updated import
 import Header from '../Header';
 import Footer from '../Footer';
 import './Layout.css';
@@ -9,17 +9,17 @@ export class Layout extends Component {
 
   render() {
     return (
-      <Grid>
+      <Container fluid> {/* Use Container for main layout */}
         <Row>
-          <Col sm={12} >
+          <Col sm={12}>
             <div className="main-container">
               <Header />
               {this.props.children}
               <Footer />
             </div>
           </Col>
-          </Row>
-      </Grid>
+        </Row>
+      </Container> 
     );
   }
 }

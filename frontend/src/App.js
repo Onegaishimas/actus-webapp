@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom'; // Remove BrowserRouter import
 import { Layout } from './components/Layout';
 import { Form } from './components/Form';
 import { Results } from './components/Results';
@@ -11,14 +11,15 @@ class App extends Component {
   render() {
     return (
       <Layout>
-          <Switch>
-              <Route exact path='/' render={ props => <Landing {...props} />} />
-              <Route exact path='/form/:id' render={ props => <Form {...props} />} />
-              <Route exact path='/results' render={ props => <Results {...props} />} />
-              <Route component={NotFound}/>
-          </Switch>
+        <Routes> {/* Remove the extra BrowserRouter here */}
+          <Route path="/" element={<Landing />} /> 
+          <Route path="/form/:id" element={<Form />} /> 
+          <Route path="/results" element={<Results />} /> 
+          <Route path="*" element={<NotFound />} /> 
+        </Routes> 
       </Layout>
     );
   }
 }
-export default App;
+
+export default App; 

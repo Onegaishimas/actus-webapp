@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Col, Grid, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap'; // Updated import
 import ToolTip from '../ToolTip';
 import './Term.css';
 
@@ -11,7 +11,7 @@ export class Term extends PureComponent {
             return ( 
                 <div id={group} className="items-group">
                     <div className="item-header">{groupLabel}</div>
-                    <Grid fluid>
+                    <Container fluid> {/* Use Container instead of Gr!d */}
                         <Row>
                         {
                         items.map((item, index) => {
@@ -43,7 +43,7 @@ export class Term extends PureComponent {
                             })
                         }
                         </Row>
-                    </Grid>
+                    </Container> {/* Close Container */}
                 </div>
             );
         } else{
