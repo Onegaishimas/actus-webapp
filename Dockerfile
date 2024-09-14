@@ -24,7 +24,7 @@ ENV JAVA_HOME=/opt/java/openjdk \
 CMD ["jshell"]
 
 # Add label
-LABEL Francis=Parr <fnparr@gmail.com>
+LABEL Francis="Parr <fnparr@gmail.com>"
 
 # Add Alpine package repository
 RUN echo 'http://dl-cdn.alpinelinux.org/alpine/v3.6/main' >> /etc/apk/repositories
